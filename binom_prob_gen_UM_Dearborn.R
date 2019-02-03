@@ -1,5 +1,5 @@
 
-
+#### function to generate the entire binomial distribution
 gbinom <- function(n,prob){
 xseq <- seq(0,n)
 prob_seq <- sapply(xseq,dbinom,size=n,prob=prob)
@@ -11,7 +11,8 @@ return(prob_seq)
 library(ggplot2)
 
 n=10
-try1 <- gbinom(n=n,prob=0.05)
+p=0.05
+try1 <- gbinom(n=n,prob=p)
 df <- data.frame(X=seq(0,n),prob=try1)
 
 g1<-ggplot(df, aes(X, prob)) +
